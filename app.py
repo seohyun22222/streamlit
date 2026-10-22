@@ -6,81 +6,71 @@ import streamlit.components.v1 as components
 
 # 페이지 기본 설정
 st.set_page_config(
-    page_title="거대한 뿔의 역설: 3D 핸디캡 원리 시뮬레이터",
+    page_title="3D 사슴 핸디캡 원리 시뮬레이터",
     page_icon="🦌",
     layout="wide",
 )
 
-# 메인 타이틀
-st.title("🦌 거대한 뿔의 역설: 3D 핸디캡 원리 시뮬레이터")
+st.title("🦌 3D 핸디캡 원리 생태 시뮬레이터")
 st.caption(
-    "진화생물학 탐구 대시보드 | 자연선택, 핸디캡 원리, 그리고 진화적으로 안정된 전략(ESS)"
+    "자연선택(Natural Selection)과 진화적으로 안정된 전략(ESS)의 3D 인터랙티브 실험실"
 )
 
-# 상단 탭 구성 (탐구 동기, 3D 시뮬레이션, 수리적 원리, 결과 분석)
+# 4가지 메인 탭 구성
 tab1, tab2, tab3, tab4 = st.tabs(
     [
         "💡 1. 탐구 동기",
-        "🧪 2. 3D 리얼 시뮬레이션",
-        "📐 3. 작동 원리 및 모델링",
-        "📊 4. 결과 분석 및 고찰",
+        "🎬 2. 3D 리얼 애니메이션 시뮬레이션",
+        "📐 3. 작동 원리 & 수리 모델",
+        "📊 4. 결과 분석 & 고찰",
     ]
 )
 
 # ==========================================
-# 1. 탐구 동기 탭
+# 1. 탐구 동기 탭 (정리된 핵심 요약)
 # ==========================================
 with tab1:
-    st.header("💡 탐구 동기 및 핵심 요약")
+    st.markdown("### 📌 탐구의 핵심 질문 및 개요")
 
-    col1, col2 = st.columns([1, 1])
-
+    col1, col2 = st.columns(2)
     with col1:
-        st.markdown("""
-        ### 1. 자연선택: 완벽함이 아닌 '차선의 최적화'
-        - 자연선택은 모든 생물을 완벽하게 진화시키는 전지전능한 설계도가 아닙니다.
-        - 주어진 환경과 유전적 제약 안에서 다음 세대에 유전자를 더 많이 남기기 위해 작동하는 **엄혹한 상대적 필터링 메커니즘**입니다.
+        st.info("""
+        #### 1. 자연선택: 완벽함이 아닌 '차선의 최적화'
+        - 자연선택은 모든 생물을 완벽하게 만드는 전지전능한 설계도가 아닙니다.
+        - 주어진 환경과 유전적 제약 안에서 유전자를 다음 세대에 더 많이 남기기 위한 **상대적 필터링 메커니즘**입니다.
         
-        ### 2. 핸디캡 원리: '손해'를 통한 신뢰의 증명
-        - 사슴의 거대한 뿔처럼 생존에 방해가 되는 과시적 낭비는 가짜가 감히 흉내 낼 수 없는 극단적인 비용을 치름으로써, **자신의 유전적 우수성을 증명하는 방법**이 됩니다.
+        #### 2. 핸디캡 원리: '손해'를 통한 신뢰의 증명
+        - 사슴의 거대한 뿔처럼 생존에 방해가 되는 과시적 낭비는 가짜가 감히 흉내 낼 수 없는 극단적인 비용을 치름으로써, **자신의 유전적 우수성을 증명하는 확실한 방법**이 됩니다.
         """)
 
     with col2:
-        st.markdown("""
-        ### 3. 진화적으로 안정된 전략 (ESS): 비용과 이득의 수학적 균형
+        st.success("""
+        #### 3. 진화적으로 안정된 전략 (ESS): 비용과 이득의 수학적 균형
         - 뿔이 너무 작으면 싸움 비용이 늘어나고, 너무 크면 유지 에너지가 고갈됩니다.
         - 자연선택은 이 두 비용 사이에서 생존 효율을 극대화하는 **최적의 타협점**을 찾아내며, 이것이 바로 진화가 만들어낸 정교한 균형 감각입니다.
         """)
-        st.info(
-            "👉 상단 **'🧪 2. 3D 리얼 시뮬레이션'** 탭으로 이동하여 뿔 크기에 따른 사슴의 실제 움직임과 생존 변화를 관찰해 보세요!"
+        st.markdown(
+            "👉 **'🎬 2. 3D 리얼 애니메이션 시뮬레이션'** 탭에서 움직이는 사슴을 직접 확인해 보세요!"
         )
 
 # ==========================================
-# 2. 3D 리얼 시뮬레이션 탭
+# 2. 3D 리얼 애니메이션 시뮬레이션 탭
 # ==========================================
 with tab2:
-    st.header("🧪 3D 사슴 생태 시뮬레이션")
-    st.markdown(
-        "사이드바에서 **'뿔 크기'**를 조절하면 3D 캔버스에 사슴의 뿔 모양이 즉시 반영되고, 라이벌과 만났을 때의 행동 패턴이 계산됩니다."
-    )
-
-    # 사이드바 입력 설정
-    st.sidebar.header("⚙️ 시뮬레이션 환경 변수")
+    st.sidebar.header("⚙️ 시뮬레이션 조작")
     antler_size = st.sidebar.slider(
-        "뿔 크기 (Handicap Level)",
+        "내 사슴 뿔 크기 (Handicap Level)",
         min_value=0,
         max_value=100,
         value=50,
         step=5,
-        help="0: 아주 작음 | 50: 적정 크기 | 100: 극단적으로 큼",
     )
     stamina_input = st.sidebar.slider("기초 체력 (HP)", 50, 300, 150, 10)
-    rounds_input = st.sidebar.slider("영역 다툼 횟수 (Rounds)", 5, 30, 15, 5)
+    rounds_input = st.sidebar.slider("영역 다툼 횟수", 5, 30, 15, 5)
 
-    # VPython (GlowScript 3D) HTML 생성 함수
-    def generate_vpython_3d_deer(antler_val):
-        # 뿔 크기 스케일링
-        antler_scale = 0.2 + (antler_val / 100.0) * 1.5
+    # VPython WebGL 기반 동적 애니메이션 HTML 생성
+    def render_3d_action_simulation(antler_val):
+        scale = 0.2 + (antler_val / 100.0) * 1.5
 
         html_code = f"""
         <!DOCTYPE html>
@@ -100,178 +90,106 @@ with tab2:
                     window.__context = {{ glowscript_container: $("#glowscript") }};
                     
                     var scene = canvas({{
-                        width: 700, 
-                        height: 420, 
-                        background: vec(0.12, 0.15, 0.18),
-                        center: vec(0, 1, 0),
-                        forward: vec(-1, -0.4, -1)
+                        width: 780, 
+                        height: 460, 
+                        background: vec(0.1, 0.14, 0.18),
+                        center: vec(0, 1.2, 0),
+                        forward: vec(-0.8, -0.3, -1)
                     }});
                     
-                    // 들판 바닥
-                    var ground = box({{pos: vec(0,-0.1,0), size: vec(15, 0.2, 15), color: vec(0.2, 0.45, 0.2)}});
+                    // 넓은 풀밭 바닥
+                    var ground = box({{pos: vec(0,-0.1,0), size: vec(25, 0.2, 25), color: vec(0.22, 0.48, 0.22)}});
                     
-                    // 3D 사슴 모델링 그룹
-                    var body = cylinder({{pos: vec(-1, 1.2, 0), axis: vec(2, 0, 0), radius: 0.5, color: vec(0.6, 0.35, 0.15)}});
-                    var neck = cylinder({{pos: vec(0.8, 1.2, 0), axis: vec(0.4, 0.8, 0), radius: 0.25, color: vec(0.6, 0.35, 0.15)}});
-                    var head = sphere({{pos: vec(1.2, 2.1, 0), radius: 0.35, color: vec(0.55, 0.3, 0.12)}});
+                    // 사슴 생성 함수
+                    function createDeer(posX, posZ, antlerScale, isRival) {{
+                        var bodyColor = isRival ? vec(0.45, 0.25, 0.1) : vec(0.65, 0.38, 0.15);
+                        var antlerColor = isRival ? vec(0.7, 0.6, 0.4) : vec(0.9, 0.8, 0.5);
+                        
+                        var deerGroup = [];
+                        var body = cylinder({{pos: vec(posX-0.8, 1.2, posZ), axis: vec(1.6, 0, 0), radius: 0.5, color: bodyColor}});
+                        var head = sphere({{pos: vec(posX+1.0, 2.0, posZ), radius: 0.35, color: bodyColor}});
+                        
+                        // 다리 4개
+                        var l1 = cylinder({{pos: vec(posX-0.6, 1.2, posZ+0.3), axis: vec(0, -1.2, 0), radius: 0.09, color: bodyColor}});
+                        var l2 = cylinder({{pos: vec(posX-0.6, 1.2, posZ-0.3), axis: vec(0, -1.2, 0), radius: 0.09, color: bodyColor}});
+                        var l3 = cylinder({{pos: vec(posX+0.5, 1.2, posZ+0.3), axis: vec(0, -1.2, 0), radius: 0.09, color: bodyColor}});
+                        var l4 = cylinder({{pos: vec(posX+0.5, 1.2, posZ-0.3), axis: vec(0, -1.2, 0), radius: 0.09, color: bodyColor}});
+                        
+                        // 뿔 생성
+                        var a1 = cylinder({{pos: vec(posX+1.0, 2.2, posZ+0.15), axis: vec(0.2*antlerScale, 0.8*antlerScale, 0.4*antlerScale), radius: 0.06, color: antlerColor}});
+                        var a2 = cylinder({{pos: vec(posX+1.0, 2.2, posZ-0.15), axis: vec(0.2*antlerScale, 0.8*antlerScale, -0.4*antlerScale), radius: 0.06, color: antlerColor}});
+                        
+                        return {{body: body, head: head, l1: l1, l2: l2, l3: l3, l4: l4, a1: a1, a2: a2, posX: posX, posZ: posZ}};
+                    }}
                     
-                    // 다리 4개
-                    var leg1 = cylinder({{pos: vec(-0.8, 1.2, 0.3), axis: vec(0, -1.2, 0), radius: 0.1, color: vec(0.5, 0.28, 0.1)}});
-                    var leg2 = cylinder({{pos: vec(-0.8, 1.2, -0.3), axis: vec(0, -1.2, 0), radius: 0.1, color: vec(0.5, 0.28, 0.1)}});
-                    var leg3 = cylinder({{pos: vec(0.6, 1.2, 0.3), axis: vec(0, -1.2, 0), radius: 0.1, color: vec(0.5, 0.28, 0.1)}});
-                    var leg4 = cylinder({{pos: vec(0.6, 1.2, -0.3), axis: vec(0, -1.2, 0), radius: 0.1, color: vec(0.5, 0.28, 0.1)}});
+                    // 내 사슴 (왼쪽) & 라이벌 사슴 (오른쪽)
+                    var myDeer = createDeer(-3, 0, {scale}, false);
+                    var rivalDeer = createDeer(5, 0, 0.8, true); // 라이벌은 일정 크기의 뿔 보유
                     
-                    // 3D 뿔 (Antlers) - 파라미터 적용
-                    var scale = {antler_scale};
-                    var antler_left_main = cylinder({{pos: vec(1.2, 2.3, 0.15), axis: vec(0.2*scale, 0.9*scale, 0.4*scale), radius: 0.06, color: vec(0.85, 0.75, 0.5)}});
-                    var antler_left_branch = cylinder({{pos: vec(1.3, 2.7, 0.3), axis: vec(0.4*scale, 0.3*scale, -0.2*scale), radius: 0.04, color: vec(0.85, 0.75, 0.5)}});
-                    
-                    var antler_right_main = cylinder({{pos: vec(1.2, 2.3, -0.15), axis: vec(0.2*scale, 0.9*scale, -0.4*scale), radius: 0.06, color: vec(0.85, 0.75, 0.5)}});
-                    var antler_right_branch = cylinder({{pos: vec(1.3, 2.7, -0.3), axis: vec(0.4*scale, 0.3*scale, 0.2*scale), radius: 0.04, color: vec(0.85, 0.75, 0.5)}});
-                    
-                    // 숨쉬기/움직임 애니메이션
+                    var state = "APPROACH"; // APPROACH, INTERACT, RETREAT, FIGHT
                     var t = 0;
+                    var actionTimer = 0;
+                    
+                    var myAntlerVal = {antler_val};
+                    
                     while (true) {{
                         await rate(30);
-                        t += 0.08;
-                        head.pos.y = 2.1 + Math.sin(t) * 0.05;
-                        antler_left_main.pos.y = 2.3 + Math.sin(t) * 0.05;
-                        antler_left_branch.pos.y = 2.7 + Math.sin(t) * 0.05;
-                        antler_right_main.pos.y = 2.3 + Math.sin(t) * 0.05;
-                        antler_right_branch.pos.y = 2.7 + Math.sin(t) * 0.05;
-                    }}
-                }}
-                $(document).ready(function() {{ __main__(); }});
-            </script>
-        </body>
-        </html>
-        """
-        return html_code
-
-    # 3D 시뮬레이션 계산 로직
-    def run_simulation(antler, stamina, total_rounds):
-        energy = float(stamina)
-        energy_history = [energy]
-        intimidations, defeats = 0, 0
-
-        weight_cost = antler * 0.18
-        challenge_prob = max(0.10, 0.90 - (antler / 100.0) * 0.75)
-
-        for r in range(1, total_rounds + 1):
-            if energy <= 0:
-                break
-            energy -= weight_cost
-
-            if np.random.rand() < challenge_prob:
-                damage = max(5.0, 40.0 - (antler * 0.35))
-                energy -= damage
-                defeats += 1
-            else:
-                intimidations += 1
-
-            energy = max(0.0, energy)
-            energy_history.append(energy)
-
-        return energy, energy_history, intimidations, defeats
-
-    col_3d, col_res = st.columns([3, 2])
-
-    with col_3d:
-        st.subheader("🖥️ 3D 사슴 개체 렌더링")
-        st.caption(
-            "마우스 오른쪽 클릭 후 드래그하여 3D 시점을 회전할 수 있습니다."
-        )
-        html_content = generate_vpython_3d_deer(antler_size)
-        components.html(html_content, height=440, scrolling=False)
-
-    with col_res:
-        st.subheader("📊 시뮬레이션 실행 결과")
-        final_energy, history, intimidations, defeats = run_simulation(
-            antler_size, stamina_input, rounds_input
-        )
-
-        st.metric(
-            "생존 상태",
-            "🎉 생존 성공" if final_energy > 0 else "☠️ 사멸 (체력 고갈)",
-        )
-        st.metric("남은 체력 (HP)", f"{final_energy:.1f} HP")
-        st.metric(
-            "라이벌 퇴치(위협 성공)",
-            f"{intimidations} 회",
-            help="뿔을 보고 싸움을 피한 횟수",
-        )
-        st.metric(
-            "직접 충돌(싸움 발생)",
-            f"{defeats} 회",
-            help="라이벌이 덤벼들어 손상을 입은 횟수",
-        )
-
-    # 잔여 체력 그래프
-    df_chart = pd.DataFrame(
-        {"라운드": list(range(len(history))), "체력(HP)": history}
-    )
-    fig = px.line(
-        df_chart,
-        x="라운드",
-        y="체력(HP)",
-        title=f"뿔 크기 [{antler_size}] 사슴의 체력 변화 추이",
-        markers=True,
-    )
-    st.plotly_chart(fig, use_container_width=True)
-
-# ==========================================
-# 3. 작동 원리 및 모델링 탭
-# ==========================================
-with tab3:
-    st.header("📐 핸디캡 원리의 수리적 모델링")
-
-    st.markdown("""
-    이 시뮬레이터는 두 가지 상충하는 비용(Trade-off)의 상호작용을 수학적으로 모델링합니다.
-    """)
-
-    col_m1, col_m2 = st.columns(2)
-
-    with col_m1:
-        st.subheader("1. 뿔 유지 비용 (Handicap Cost)")
-        st.latex(r"\text{Cost}_{weight} = \text{Antler} \times 0.18")
-        st.markdown(
-            "- 뿔이 무거울수록 이동과 목 지탱에 드는 매 라운드 **기초 체력 소모가 증가**합니다."
-        )
-
-    with col_m2:
-        st.subheader("2. 라이벌의 도전 확률 (Deterrence Effect)")
-        st.latex(
-            r"P_{\text{challenge}} = \max\left(0.10, 0.90 - \frac{\text{Antler}}{100} \times 0.75\right)"
-        )
-        st.markdown(
-            "- 뿔이 거대할수록 라이벌이 상대의 강함을 인지하여 **싸움을 포기하고 도망칠 확률이 높아집니다.**"
-        )
-
-# ==========================================
-# 4. 결과 분석 및 고찰 탭
-# ==========================================
-with tab4:
-    st.header("📊 결과 분석 및 생물학적 고찰")
-
-    c1, c2, c3 = st.columns(3)
-
-    with c1:
-        st.error("❌ 뿔 크기 0 ~ 25 (핸디캡 부족)")
-        st.markdown("""
-        - **원인:** 뿔 유지 비용은 적지만 라이벌에게 강함을 증명하지 못함.
-        - **결과:** 라이벌들이 연이어 싸움을 걸어와 **전투 피로와 손상으로 사멸**.
-        """)
-
-    with c2:
-        st.success("✅ 뿔 크기 35 ~ 65 (최적의 ESS)")
-        st.markdown("""
-        - **원인:** 무혈입성의 '위협 이득'과 '유지 비용'이 완벽한 균형을 이룸.
-        - **결과:** 불필요한 싸움을 회피하고 체력을 보존하여 **자연선택에 의해 우세종으로 생존**.
-        """)
-
-    with c3:
-        st.warning("⚠️ 뿔 크기 75 ~ 100 (과도한 핸디캡)")
-        st.markdown("""
-        - **원인:** 라이벌은 완벽히 제압했으나 뿔 자체가 너무 무거움.
-        - **결과:** 싸우지도 않고 **스스로 굶어 죽거나 체력이 고갈되어 자멸**.
-        """)
+                        t += 0.1;
+                        actionTimer += 1;
+                        
+                        // 보행 애니메이션 (다리 움직임)
+                        var legMove = Math.sin(t * 3) * 0.2;
+                        myDeer.l1.axis = vec(legMove, -1.2, 0);
+                        myDeer.l2.axis = vec(-legMove, -1.2, 0);
+                        rivalDeer.l1.axis = vec(legMove, -1.2, 0);
+                        rivalDeer.l2.axis = vec(-legMove, -1.2, 0);
+                        
+                        // 상태 머신 (행동 제어)
+                        if (state === "APPROACH") {{
+                            // 서로에게 다가옴
+                            if (myDeer.posX < -1.2) {{
+                                myDeer.posX += 0.05;
+                                myDeer.body.pos.x += 0.05;
+                                myDeer.head.pos.x += 0.05;
+                                myDeer.l1.pos.x += 0.05; myDeer.l2.pos.x += 0.05;
+                                myDeer.l3.pos.x += 0.05; myDeer.l4.pos.x += 0.05;
+                                myDeer.a1.pos.x += 0.05; myDeer.a2.pos.x += 0.05;
+                            }}
+                            if (rivalDeer.posX > 1.2) {{
+                                rivalDeer.posX -= 0.05;
+                                rivalDeer.body.pos.x -= 0.05;
+                                rivalDeer.head.pos.x -= 0.05;
+                                rivalDeer.l1.pos.x -= 0.05; rivalDeer.l2.pos.x -= 0.05;
+                                rivalDeer.l3.pos.x -= 0.05; rivalDeer.l4.pos.x -= 0.05;
+                                rivalDeer.a1.pos.x -= 0.05; rivalDeer.a2.pos.x -= 0.05;
+                            }}
+                            if (actionTimer > 80) {{
+                                state = "INTERACT";
+                                actionTimer = 0;
+                            }}
+                        }} else if (state === "INTERACT") {{
+                            // 대치 상태: 머리 흔들며 서로의 뿔을 확인
+                            myDeer.head.pos.y = 2.0 + Math.sin(t*2)*0.08;
+                            rivalDeer.head.pos.y = 2.0 + Math.cos(t*2)*0.08;
+                            
+                            if (actionTimer > 50) {{
+                                // 뿔 크기에 따른 판정 (뿔이 크면 라이벌 도망, 작으면 충돌)
+                                if (myAntlerVal >= 40) {{
+                                    state = "RETREAT"; // 위협 성공 -> 라이벌 도망
+                                }} else {{
+                                    state = "FIGHT"; // 뿔이 작음 -> 부딪힘
+                                }}
+                                actionTimer = 0;
+                            }}
+                        }} else if (state === "RETREAT") {{
+                            // 라이벌이 겁먹고 뒤로 도망침
+                            rivalDeer.body.pos.x += 0.08;
+                            rivalDeer.head.pos.x += 0.08;
+                            rivalDeer.l1.pos.x += 0.08; rivalDeer.l2.pos.x += 0.08;
+                            rivalDeer.l3.pos.x += 0.08; rivalDeer.l4.pos.x += 0.08;
+                            rivalDeer.a1.pos.x += 0.08; rivalDeer.a2.pos.x += 0.08;
+                        }} else if (state === "FIGHT") {{
+                            // 서로 뿔을 맞대고 쿵쿵거리며 싸움
+                            var fightShake = Math.sin(t * 10) * 0.06;
+                            myDeer.head.pos.x = -0.2 + fightShake;
+                            rivalDeer.head.pos.x = 0.2 - fightShake
